@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="StockManagement" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/postgres-pool</jta-data-source>
+
+        <class>fr.univtln.m2dapm.stock.entities.classes.AbstractEntity</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.actors.Teacher</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.equipments.AbstractEquipment</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.equipments.BoardMarker</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.equipments.ChalkBox</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.equipments.Computer</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.equipments.SlideProjector</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.premises.ClassRoom</class>
+        <class>fr.univtln.m2dapm.stock.entities.classes.premises.School</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+
+            <!--<property name="hibernate.archive.autodetection" value="class" />-->
+            <!--<property name="hibernate.format_sql" value="true" />-->
+
+            <!--<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />-->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/stock" />-->
+            <!--<property name="javax.persistence.jdbc.user" value="sa" />-->
+
+            <!--&lt;!&ndash; Spécifie le 'dialecte' SQL utilisé pour communiquer avec la BDD &ndash;&gt;-->
+            <!--<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />-->
+
+            <!--&lt;!&ndash; Indique a Hibernate de (re-)créer la BDD au lancement de l'application &ndash;&gt;-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create-drop" />-->
+            <!--&lt;!&ndash;<property name="hibernate.hbm2ddl.auto" value="validate" />&ndash;&gt;-->
+            <!--&lt;!&ndash;<property name="javax.persistence.schema-generation.database.action" value="create"/>&ndash;&gt;-->
+
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="drop-and-create"/>
+
+            <property name="javax.persistence.schema-generation.drop-source"
+                      value="metadata" />
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
