@@ -1,16 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
 
   <parent>
     <groupId>fr.univtln.m2dapm.stock</groupId>
     <artifactId>StockManagement</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-jsf-SNAPSHOT</version>
   </parent>
 
   <artifactId>JPADAO</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-jsf-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>JPADAO</name>
@@ -24,7 +23,7 @@
     <dependency>
       <groupId>fr.univtln.m2dapm.stock</groupId>
       <artifactId>JPAEntities</artifactId>
-      <version>0.1-SNAPSHOT</version>
+      <version>0.1-jsf-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
