@@ -33,7 +33,7 @@ public class Computer extends AbstractEquipment implements IComputer {
     }
 
     private Computer(Computer.Builder computerBuilder){
-        this.information = computerBuilder.informationBuilder;
+//        this.information = computerBuilder.informationBuilder;
     }
 
     /* - - - - - - - - - - B U I L D E R - - - - - - - - - - */

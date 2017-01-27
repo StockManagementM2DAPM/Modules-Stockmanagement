@@ -13,9 +13,11 @@ import fr.univtln.m2dapm.stock.managerbean.ManagerBean;
 import fr.univtln.m2dapm.stock.managerbean.equipments.boardmarker.IBoardMarkerLocal;
 import fr.univtln.m2dapm.stock.managerbean.equipments.boardmarker.IBoardMarkerRemote;
 
+import javax.annotation.ManagedBean;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 /**
  * Created by Maxime Gajovski on 26/01/2017.
@@ -23,7 +25,10 @@ import javax.inject.Inject;
 
 @Stateless
 @ManagerBean
+
+@javax.faces.bean.ManagedBean(name = "chalkboxBean")
 @Local
+@Transactional
 //@Local(IClassroomLocal.class)
 //@Remote(IClassroomRemote.class)
 public class ChalkBoxManagerBean extends GenericManagerBean<Long, IChalkBox, ChalkBox>
@@ -33,8 +38,19 @@ public class ChalkBoxManagerBean extends GenericManagerBean<Long, IChalkBox, Cha
     @Inject
     IChalkBoxDAO chalkBoxDAO;
 
+    IChalkBox chalkBox;
+
+    public ChalkBoxManagerBean(){
+        chalkBox = new ChalkBox.Builder().build();
+    }
+
     @Override
     public ICrud<Long, IChalkBox> getAbstractCrud() {
         return chalkBoxDAO;
+    }
+
+
+    public IChalkBox getChalkBox() {
+        return chalkBox;
     }
 }

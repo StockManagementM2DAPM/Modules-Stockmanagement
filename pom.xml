@@ -24,6 +24,7 @@
     <module>JPADAO</module>
     <module>ManagerBean</module>
     <module>REST</module>
+    <module>JSF</module>
   </modules>
 
   <!--<ciManagement>-->

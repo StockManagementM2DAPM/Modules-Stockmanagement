@@ -10,11 +10,13 @@ import fr.univtln.m2dapm.stock.entities.interfaces.equipments.IChalkBox;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 /**
  * Created by Maxime Gajovski on 18/12/2016.
  */
 @JPADAO
+@Transactional
 public class ChalkBoxDAOJPA extends AbstractCrud<Long, IChalkBox,ChalkBox>
         implements IChalkBoxDAO {
 

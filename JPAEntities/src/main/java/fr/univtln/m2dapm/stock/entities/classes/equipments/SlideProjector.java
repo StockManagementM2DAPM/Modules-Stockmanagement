@@ -31,7 +31,7 @@ public class SlideProjector extends AbstractEquipment implements ISlideProjector
     }
 
     private SlideProjector(SlideProjector.Builder slideProjectorBuilder){
-        this.information = slideProjectorBuilder.informationBuilder;
+//        this.information = slideProjectorBuilder.informationBuilder;
     }
 
     /* - - - - - - - - - - B U I L D E R - - - - - - - - - - */

@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/templates/mainTemplate.xhtml"
+        >
+
+    <ui:define name="bodyContent">
+
+        <h:form id="formulaire">
+
+            <fieldset>
+                <legend>Creation de Matériel</legend>
+                <h:selectOneMenu>
+                    <f:selectItem itemValue="computer"          itemLabel="Ordinateur" />
+                    <f:selectItem itemValue="slideProjector"    itemLabel="Projecteur" />
+                    <f:selectItem itemValue="chalkBox"          itemLabel="Boite de craies" />
+                    <f:selectItem itemValue="boardMarker"       itemLabel="Marqueur" />
+                </h:selectOneMenu>
+
+                <!--<h:outputLabel for="newMessage">Nouveau Message</h:outputLabel>-->
+                <h:outputLabel for="equipmentName">Nom de l'objet :</h:outputLabel>
+                <p:inputText id="equipmentName"
+                             label="Nom de l'objet "
+                             value="#{chalkboxBean.chalkBox.name}"
+                             required="true"
+                             requiredMessage="Veuillez saisir un nom pour cet objet">
+                    <f:validateLength minimum="4" maximum="10" />
+                    <f:ajax event="blur" render="newMessageError" />
+                </p:inputText>
+                <br/>
+
+                <h:outputLabel for="equipmentName">Description de l'objet :</h:outputLabel>
+                <p:inputText id="equipmentDescription"
+                             label="Description de l'objet "
+                             value="#{chalkboxBean.chalkBox.description}">
+                </p:inputText>
+                <br/>
+
+                <h:commandButton value="addEquipment" action="#{chalkboxBean.add(chalkboxBean.chalkBox)}" />
+                <br/>
+
+            </fieldset>
+            <!--<br/>-->
+            <!--<br/>-->
+            <!--<p:commandButton ajax="false" value="Change message" action="#{helloBean.updateMessage()}"/>-->
+        </h:form>
+    </ui:define>
+
+</ui:composition>

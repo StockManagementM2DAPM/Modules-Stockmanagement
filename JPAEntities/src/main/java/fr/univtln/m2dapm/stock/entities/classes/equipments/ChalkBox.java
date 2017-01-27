@@ -31,7 +31,7 @@ public class ChalkBox  extends AbstractEquipment implements IChalkBox {
     }
 
     private ChalkBox(ChalkBox.Builder chalkBoxBuilder){
-        this.information = chalkBoxBuilder.informationBuilder;
+//        this.information = chalkBoxBuilder.informationBuilder;
     }
 
     /* - - - - - - - - - - B U I L D E R - - - - - - - - - - */

@@ -23,13 +23,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @DiscriminatorColumn(name="TYPE")
 public abstract class AbstractEquipment  extends AbstractEntity<Long> implements IEquipment {
 
-    @Embedded
-//    @Target(Information.class)
-    protected Information information;
+    @Column(name = "NAME")
+    private String name;
+
+    @Column(name = "DESCRIPTION")
+    private String description;
 
     protected AbstractEquipment()
     {
-        information = new Information();
+//        information = new Information();
     }
 
 //    protected AbstractEquipment()
@@ -41,28 +43,33 @@ public abstract class AbstractEquipment  extends AbstractEntity<Long> implements
     /* - - - - - - - - - - G E T T E R S - S E T T E R S  - - - - - - - - - - */
 
     @Override
-    public String getName(){
-        return information.getName();
+    public String getName()
+    {
+        return name;
     }
 
     @Override
-    public IInformation setName(String name){
-        information.setName(name);
-        return information;
+    public void setName(String name){
+        this.name = name;
+//        .setName(name);
+//        return information;
     }
 
     @Override
     public String getDescription(){
-        return information.getDescription();
+        return this.description;
     }
 
     @Override
-    public IInformation setDescription(String description){
-        information.setDescription(description);
-        return information;
+    public void setDescription(String description){
+        this.description = description;
+//        return information;
     }
 
-
+//    @Override
+//    public IInformation getInformation(){
+//        return information;
+//    }
 
     /* - - - - - - - - - - T O - S T R I N G - - - - - - - - - - */
 

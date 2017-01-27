@@ -31,7 +31,7 @@ public class BoardMarker extends AbstractEquipment implements IBoardMarker {
     }
 
     private BoardMarker(BoardMarker.Builder boardMarkerBuilder){
-        this.information = boardMarkerBuilder.informationBuilder;
+//        this.information = boardMarkerBuilder.informationBuilder;
     }
 
     /* - - - - - - - - - - B U I L D E R - - - - - - - - - - */
